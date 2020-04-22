@@ -12,8 +12,14 @@ export class HomeComponent implements OnInit {
 
   idvarpass = "";
   ngOnInit() {
-    let id = this.route.snapshot.paramMap.get('id');
-    this.idvarpass = id;
+    // let id = this.route.snapshot.paramMap.get('id');
+    // this.idvarpass = id;
+
+    this.route.params.subscribe(param=>{
+      let id = this.route.snapshot.paramMap.get('id');
+      this.idvarpass = id;
+    });
   }
+  
 
 }
